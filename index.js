@@ -5,6 +5,7 @@ require('dotenv').config();
 const authRoutes = require('./src/routes/authRoutes');
 const tripRoutes = require('./src/routes/tripRoutes');
 const busRoutes = require('./src/routes/busRoutes');
+const bookingRoutes = require('./src/routes/bookingRoutes');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/trips', tripRoutes);
 app.use('/api/buses', busRoutes);
+app.use('/api/bookings', bookingRoutes);
 
 app.get('/api/health', async (req, res) => {
   try {
@@ -37,7 +39,30 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 8000;
+const server = app.listen(PORT, () => {
   console.log(`TripSync Backend active on port ${PORT}`);
 });
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is already in use. Please close other instances.`);
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Uncaught Exception thrown:', err);
+});
+
+process.on('exit', (code) => {
+  console.log(`Process exiting with code: ${code}`);
+});
+
+// Keep process alive
+setInterval(() => { }, 1000 * 60 * 60);
