@@ -45,7 +45,8 @@ const BusManagement = () => {
             fetchBuses();
         } catch (err) {
             const errorMsg = err.response?.data?.error || 'Failed to add bus. Please try again.';
-            setMessage({ type: 'error', text: errorMsg });
+            const errorDetails = err.response?.data?.details ? ` (${err.response.data.details})` : '';
+            setMessage({ type: 'error', text: errorMsg + errorDetails });
             console.error('Bus addition error:', err);
         } finally {
             setSubmitting(false);

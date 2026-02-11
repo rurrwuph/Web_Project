@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased selection:bg-cyan-200 selection:text-cyan-900;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-cyan-500 to-violet-500;
+  }
+
+  .mesh-gradient-light {
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(192, 100%, 94%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(258, 80%, 96%, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(180, 80%, 95%, 1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(280, 70%, 96%, 1) 0px, transparent 50%);
+  }
+}

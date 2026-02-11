@@ -30,7 +30,7 @@ const createBooking = async (req, res) => {
         }
 
         console.error('Booking Error:', err);
-        res.status(500).json({ error: "Internal server error." });
+        res.status(500).json({ error: err.message || "Internal server error." });
     }
 
 };

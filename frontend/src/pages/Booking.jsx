@@ -60,6 +60,7 @@ const Booking = () => {
         setBookingLoading(true);
         try {
             for (const seat of selectedSeats) {
+                console.log('Sending Booking Request with Token:', token);
                 await axios.post('/api/bookings/book',
                     { tripId: parseInt(tripId), seatId: seat.seatid },
                     { headers: { Authorization: `Bearer ${token}` } }
@@ -67,7 +68,9 @@ const Booking = () => {
             }
             setBookingSuccess(true);
         } catch (err) {
-            alert(err.response?.data?.error || "Booking failed.");
+            const errorMsg = err.response?.data?.error || "Booking failed.";
+            const errorDetails = err.response?.data?.details || err.response?.data?.message || "";
+            alert(`${errorMsg}\n${errorDetails}`);
         } finally {
             setBookingLoading(false);
         }

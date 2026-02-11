@@ -1,1 +1,0 @@
-SELECT COUNT(*) FROM BUS WHERE OperatorID = $1;
