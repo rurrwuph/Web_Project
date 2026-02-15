@@ -106,5 +106,63 @@ JOIN ROUTE rt ON t.RouteID = rt.RouteID
 JOIN SEAT s ON b.SeatID = s.SeatID
 LEFT JOIN COMPLAINT comp ON b.BookingID = comp.BookingID;
 
+-- 4. Procedure: Handle Refund Decision (Operator)
+CREATE OR REPLACE PROCEDURE handle_refund_decision(
+    p_refund_id INT,
+    p_operator_id INT,
+    p_decision VARCHAR
+) AS $$
+DECLARE
+    v_booking_id INT;
+    v_owner_operator_id INT;
+BEGIN
+    SELECT b.BookingID, t.OperatorID 
+    INTO v_booking_id, v_owner_operator_id
+    FROM REFUND r
+    JOIN BOOKING b ON r.BookingID = b.BookingID
+    JOIN TRIP t ON b.TripID = t.TripID
+    WHERE r.RefundID = p_refund_id;
 
+    IF v_owner_operator_id IS NULL THEN
+        RAISE EXCEPTION 'Refund request not found.';
+    END IF;
 
+    IF v_owner_operator_id <> p_operator_id THEN
+        RAISE EXCEPTION 'Unauthorized: This trip does not belong to you.';
+    END IF;
+
+    UPDATE REFUND 
+    SET Status = p_decision 
+    WHERE RefundID = p_refund_id;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 5. Trigger Function: Sync Refund Decisions to Booking & Payment
+CREATE OR REPLACE FUNCTION trigger_sync_refund_to_booking()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.Status <> OLD.Status THEN
+        IF NEW.Status = 'Approved' THEN
+            UPDATE BOOKING 
+            SET BookingStatus = 'Cancelled' 
+            WHERE BookingID = NEW.BookingID;
+            
+            UPDATE PAYMENT
+            SET PaymentStatus = 'Fully Refunded'
+            WHERE PaymentID = NEW.PaymentID;
+
+        ELSIF NEW.Status = 'Rejected' THEN
+            UPDATE BOOKING 
+            SET BookingStatus = 'Confirmed' 
+            WHERE BookingID = NEW.BookingID;
+        END IF;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS trg_after_refund_status_change ON REFUND;
+CREATE TRIGGER trg_after_refund_status_change
+AFTER UPDATE ON REFUND
+FOR EACH ROW
+EXECUTE FUNCTION trigger_sync_refund_to_booking();
