@@ -70,4 +70,32 @@ const getTripSeats = async (req, res) => {
     }
 };
 
-module.exports = { createBooking, getTripSeats };
+
+const handleCancellationRequest = async (req, res) => {
+    const { bookingId, reason, issueType } = req.body;
+    const customerId = req.user.id;
+
+    try {
+        await db.query('CALL cancel_or_request_refund($1, $2, $3, $4)', [
+            bookingId,
+            customerId,
+            reason || null,
+            issueType || 'Cancellation'
+        ]);
+
+        const result = await db.query('SELECT BookingStatus FROM BOOKING WHERE BookingID = $1', [bookingId]);
+        const status = result.rows[0].bookingstatus;
+
+        res.status(200).json({
+            success: true,
+            message: status === 'Cancelled'
+                ? "Reservation released."
+                : "Refund request submitted for review."
+        });
+    } catch (error) {
+        console.error("Cancellation Procedure Error:", error);
+        res.status(400).json({ error: error.message });
+    }
+};
+
+module.exports = { createBooking, getTripSeats, handleCancellationRequest };
