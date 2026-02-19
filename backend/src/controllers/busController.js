@@ -17,7 +17,7 @@ const addBus = async (req, res) => {
 
         res.status(201).json({
             message: "Bus registered successfully",
-            busId: result.rows[0].p_bus_id,
+            busId: result.rows[0]?.p_bus_id,
             info: `Database trigger has automatically generated ${totalSeats} seats.`
         });
     } catch (err) {

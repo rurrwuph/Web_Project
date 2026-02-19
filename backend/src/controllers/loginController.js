@@ -15,16 +15,16 @@ const login = async (req, res) => {
         let userDataQuery;
 
         if (type === 'customer') {
-            sqlQuery = 'SELECT verify_customer_login($1, $2) AS hash';
+            sqlQuery = 'SELECT verify_customer_login($1) AS hash';
             userDataQuery = 'SELECT CustomerID, FullName FROM CUSTOMER WHERE Email = $1';
         }
 
         else {
-            sqlQuery = 'SELECT verify_operator_login($1, $2) AS hash';
+            sqlQuery = 'SELECT verify_operator_login($1) AS hash';
             userDataQuery = 'SELECT OperatorID, CompanyName FROM OPERATOR WHERE AdminEmail = $1';
         }
 
-        const result = await db.query(sqlQuery, [email, 'check']);
+        const result = await db.query(sqlQuery, [email]);
         const storedHash = result.rows[0].hash;
 
         if (!storedHash) {

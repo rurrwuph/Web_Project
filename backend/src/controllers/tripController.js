@@ -97,6 +97,7 @@ const getOperatorStats = async (req, res) => {
 };
 
 const getRoutes = async (req, res) => {
+    // ... existing getRoutes ...
     try {
         const result = await db.query('SELECT * FROM get_all_routes()');
         res.status(200).json(result.rows);
@@ -107,6 +108,7 @@ const getRoutes = async (req, res) => {
 };
 
 const getTripDetails = async (req, res) => {
+    // ... existing getTripDetails ...
     const { id } = req.params;
     try {
         const result = await db.query(
