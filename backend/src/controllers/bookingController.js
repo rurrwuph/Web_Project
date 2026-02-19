@@ -53,6 +53,8 @@ const createBooking = async (req, res) => {
     }
 };
 
+
+
 const getTripSeats = async (req, res) => {
     const { tripId } = req.params;
 
@@ -98,4 +100,58 @@ const handleCancellationRequest = async (req, res) => {
     }
 };
 
-module.exports = { createBooking, getTripSeats, handleCancellationRequest };
+
+
+const getOperatorRefunds = async (req, res) => {
+    const operatorId = req.user.id;
+    try {
+        const result = await db.query(`
+            SELECT * FROM v_operator_refunds 
+            WHERE operatorid = $1 
+            ORDER BY requestedat DESC
+        `, [operatorId]);
+
+        res.status(200).json(result.rows);
+    } catch (err) {
+        console.error('Fetch Refunds Error:', err);
+        res.status(500).json({ error: "Failed to fetch refund requests." });
+    }
+};
+
+const processRefundDecision = async (req, res) => {
+    const { refundId, decision } = req.body; 
+    const operatorId = req.user.id;
+
+    try {
+        // Procedure: handle_refund_decision(p_refund_id, p_operator_id, p_decision)
+        await db.query('CALL handle_refund_decision($1, $2, $3)', [refundId, operatorId, decision]);
+
+        res.status(200).json({
+            success: true,
+            message: `Refund request ${decision.toLowerCase()} successfully.`
+        });
+    } catch (err) {
+        console.error('Refund Decision Error:', err);
+        res.status(500).json({ error: err.message || "Failed to process refund decision." });
+    }
+};
+
+const getPendingOperatorActions = async (req, res) => {
+    const operatorId = req.user.id;
+    try {
+        const result = await db.query('SELECT * FROM get_pending_operator_actions($1)', [operatorId]);
+        res.status(200).json(result.rows);
+    } catch (err) {
+        console.error('Fetch Pending Actions Error:', err);
+        res.status(500).json({ error: "Internal server error fetching pending actions." });
+    }
+};
+
+module.exports = {
+    createBooking,
+    getTripSeats,
+    handleCancellationRequest,
+    getPendingOperatorActions,
+    getOperatorRefunds,
+    processRefundDecision
+};
