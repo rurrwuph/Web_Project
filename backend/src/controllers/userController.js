@@ -18,38 +18,6 @@ const getProfile = async (req, res) => {
 
 };
 
-// const getMyBookings = async (req, res) => {
-//     const customerId = req.user.id;
-
-//     try {
-//         const sqlQuery = `
-//             SELECT 
-//                 STRING_AGG(b.BookingID::text, ', ' ORDER BY b.BookingID) as bookingids,
-//                 b.BookingStatus as status, 
-//                 b.BookingTime as bookingtime,
-//                 t.TripDate as tripdate, t.DepartureTime as departuretime,
-//                 r.StartPoint as startpoint, r.EndPoint as endpoint,
-//                 bus.BusNumber as busnumber, bus.BusType as bustype,
-//                 STRING_AGG(s.SeatNumber, ', ' ORDER BY s.SeatNumber) as seatnumbers,
-//                 SUM(t.BaseFare) as totalfare
-//             FROM BOOKING b
-//             JOIN TRIP t ON b.TripID = t.TripID
-//             JOIN ROUTE r ON t.RouteID = r.RouteID
-//             JOIN BUS bus ON t.BusID = bus.BusID
-//             JOIN SEAT s ON b.SeatID = s.SeatID
-//             WHERE b.CustomerID = $1
-//             GROUP BY b.TripID, b.BookingStatus, b.BookingTime, t.TripDate, t.DepartureTime, r.StartPoint, r.EndPoint, bus.BusNumber, bus.BusType
-//             ORDER BY b.BookingTime DESC;
-//         `;
-
-//         const result = await db.query(sqlQuery, [customerId]);
-//         res.status(200).json(result.rows);
-//     } catch (err) {
-//         console.error('Fetch Bookings Error:', err);
-//         res.status(500).json({ error: 'Database error fetching bookings' });
-//     }
-// };
-
 const getMyBookings = async (req, res) => {
     // Assuming 'id' comes from your JWT/Auth middleware
     const customerId = req.user.id;
