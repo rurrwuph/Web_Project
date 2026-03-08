@@ -1,0 +1,755 @@
+[2026-03-10T10:20:54.765Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: ⚙️  suppress all logs with { quiet: true }[0m
+[2026-03-10T10:20:54.772Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }[0m
+[2026-03-10T10:22:32.929Z] POST /api/auth/login
+[ERROR] [2026-03-10T10:23:45.551Z] SyntaxError: Unexpected token '"', "
+     "email": ""... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at createStrictSyntaxError (D:\Web Project\Project\node_modules\body-parser\lib\types\json.js:109:10)
+    at parse (D:\Web Project\Project\node_modules\body-parser\lib\types\json.js:66:15)
+    at D:\Web Project\Project\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:226:14)
+    at invokeCallback (D:\Web Project\Project\node_modules\raw-body\index.js:238:16)
+    at done (D:\Web Project\Project\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (D:\Web Project\Project\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:508:20)
+    at endReadableNT (node:internal/streams/readable:1729:12)
+[2026-03-10T10:23:53.781Z] POST /api/auth/login
+[2026-03-10T10:24:56.523Z] GET /api/ai/assist
+[2026-03-10T10:25:55.719Z] GET /api/ai/assist
+[2026-03-10T10:26:50.989Z] POST /api/auth/login
+[2026-03-10T10:27:05.289Z] GET /api/ai/assist
+[2026-03-10T10:27:23.798Z] GET /api/ai/assist
+[2026-03-10T10:28:23.265Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops[0m
+[2026-03-10T10:28:23.271Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`[0m
+[2026-03-10T10:28:35.026Z] GET /api/ai/assist
+[2026-03-10T10:28:44.347Z] POST /api/auth/login
+[2026-03-10T10:29:30.577Z] GET /api/ai/assist
+[2026-03-10T10:33:36.020Z] GET /api/ai/assist
+[2026-03-10T10:43:17.047Z] POST /api/ai/assist
+[2026-03-10T10:43:40.870Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🗂️ backup and recover secrets: https://dotenvx.com/ops[0m
+[2026-03-10T10:43:40.877Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }[0m
+[2026-03-10T10:44:06.503Z] POST /api/ai/assist
+[2026-03-10T10:44:06.505Z] AI Controller hit!
+[2026-03-10T12:29:59.291Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops[0m
+[2026-03-10T12:29:59.298Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ✅ audit secrets and track compliance: https://dotenvx.com/ops[0m
+[2026-03-10T12:30:57.348Z] GET /api/trips/search?start=Chittagong&end=Sylhet&date=2026-03-11&sortBy=time_asc
+[2026-03-10T12:30:57.996Z] GET /api/trips/search?start=Chittagong&end=Sylhet&date=2026-03-11&sortBy=time_asc
+[2026-03-10T12:31:06.315Z] GET /api/trips/1897
+[2026-03-10T12:31:06.319Z] GET /api/bookings/seats/1897
+[2026-03-10T12:31:06.397Z] GET /api/trips/1897
+[2026-03-10T12:31:06.787Z] GET /api/bookings/seats/1897
+[2026-03-10T12:31:18.964Z] POST /api/bookings/book
+[2026-03-10T12:31:33.924Z] POST /api/auth/login
+[2026-03-10T12:31:52.225Z] POST /api/auth/register
+[ERROR] [2026-03-10T12:31:52.704Z] Registration Error: {
+  "length": 470,
+  "name": "error",
+  "severity": "ERROR",
+  "code": "23505",
+  "detail": "Key (email)=(sukuna1205@gmail.com) already exists.",
+  "where": "SQL statement \"INSERT INTO CUSTOMER (FullName, Email, Password_Hash, Phone)\r\n    VALUES (p_name, p_email, p_password, p_phone)\"\nPL/pgSQL function register_customer(character varying,character varying,text,character varying) line 3 at SQL statement",
+  "schema": "public",
+  "table": "customer",
+  "constraint": "customer_email_key",
+  "file": "nbtinsert.c",
+  "line": "667",
+  "routine": "_bt_check_unique"
+}
+[2026-03-10T12:32:17.443Z] POST /api/auth/login
+[2026-03-10T12:32:32.235Z] POST /api/auth/login
+[2026-03-10T12:33:56.354Z] GET /api/trips/operator-stats
+[2026-03-10T12:33:56.358Z] GET /api/trips/operator-trips
+[2026-03-10T12:33:56.359Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:33:56.361Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:33:56.365Z] GET /api/trips/operator-stats
+[2026-03-10T12:33:56.367Z] GET /api/trips/operator-trips
+[2026-03-10T12:33:56.372Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:33:56.373Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:34:02.276Z] POST /api/auth/login
+[2026-03-10T12:34:16.425Z] POST /api/auth/login
+[2026-03-10T12:34:22.379Z] POST /api/auth/login
+[2026-03-10T12:34:24.523Z] POST /api/auth/login
+[2026-03-10T12:34:35.364Z] POST /api/auth/login
+[2026-03-10T12:34:35.955Z] GET /api/trips/operator-stats
+[2026-03-10T12:34:35.958Z] GET /api/trips/operator-trips
+[2026-03-10T12:34:35.960Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:34:35.960Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:34:36.188Z] GET /api/trips/operator-stats
+[2026-03-10T12:34:36.389Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:34:36.439Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:34:36.441Z] GET /api/trips/operator-trips
+[2026-03-10T12:35:13.903Z] GET /api/trips/operator-stats
+[2026-03-10T12:35:13.905Z] GET /api/trips/operator-trips
+[2026-03-10T12:35:13.906Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:35:13.907Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:35:14.475Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:35:14.524Z] GET /api/trips/operator-trips
+[2026-03-10T12:35:14.527Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:35:14.591Z] GET /api/trips/operator-stats
+[2026-03-10T12:35:55.702Z] GET /api/trips/operator-analytics
+[2026-03-10T12:36:08.827Z] GET /api/users/operator/complaints
+[2026-03-10T12:36:55.403Z] POST /api/auth/login
+[2026-03-10T12:36:59.800Z] POST /api/auth/login
+[2026-03-10T12:37:01.376Z] POST /api/auth/login
+[2026-03-10T12:37:55.220Z] POST /api/auth/register
+[2026-03-10T12:38:01.939Z] POST /api/auth/login
+[2026-03-10T12:40:10.590Z] GET /api/users/profile
+[2026-03-10T12:40:10.593Z] GET /api/users/my-bookings
+[2026-03-10T12:40:11.003Z] GET /api/users/my-bookings
+[2026-03-10T12:40:11.076Z] GET /api/users/profile
+[2026-03-10T12:40:52.155Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T12:40:52.963Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T12:40:55.394Z] GET /api/trips/1894
+[2026-03-10T12:40:55.395Z] GET /api/bookings/seats/1894
+[2026-03-10T12:40:55.482Z] GET /api/trips/1894
+[2026-03-10T12:40:55.946Z] GET /api/bookings/seats/1894
+[2026-03-10T12:41:03.129Z] POST /api/bookings/book
+[2026-03-10T12:41:03.129Z] [DEBUG] Booking attempt - Customer: 18, Trip: 1894, Seats: [
+  1392,
+  1386,
+  1395
+]
+[2026-03-10T12:41:03.129Z] [DEBUG] Calling create_booking_bulk(18, 1894, [1392,1386,1395])
+[2026-03-10T12:41:03.195Z] [DEBUG] Booking successful, IDs: [
+  140,
+  141,
+  142
+]
+[2026-03-10T12:41:14.648Z] GET /api/users/profile
+[2026-03-10T12:41:14.649Z] GET /api/users/my-bookings
+[2026-03-10T12:41:15.620Z] GET /api/users/profile
+[2026-03-10T12:41:15.683Z] GET /api/users/my-bookings
+[2026-03-10T12:41:22.224Z] GET /api/users/my-bookings
+[2026-03-10T12:41:22.285Z] GET /api/users/my-bookings
+[2026-03-10T12:41:56.936Z] POST /api/payment/process
+[2026-03-10T12:42:12.214Z] GET /api/users/profile
+[2026-03-10T12:42:12.216Z] GET /api/users/my-bookings
+[2026-03-10T12:42:12.676Z] GET /api/users/profile
+[2026-03-10T12:42:12.678Z] GET /api/users/my-bookings
+[2026-03-10T12:42:43.629Z] GET /api/trips/operator-stats
+[2026-03-10T12:42:43.630Z] GET /api/trips/operator-trips
+[2026-03-10T12:42:43.630Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:42:43.631Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:42:44.094Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:42:44.150Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:42:44.151Z] GET /api/trips/operator-trips
+[2026-03-10T12:42:44.218Z] GET /api/trips/operator-stats
+[2026-03-10T12:43:03.714Z] GET /api/users/profile
+[2026-03-10T12:43:04.137Z] GET /api/users/profile
+[2026-03-10T12:43:11.633Z] GET /api/trips/operator-stats
+[2026-03-10T12:43:11.639Z] GET /api/trips/operator-trips
+[2026-03-10T12:43:11.640Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:43:11.641Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:43:11.817Z] GET /api/trips/operator-stats
+[2026-03-10T12:43:12.063Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:43:12.115Z] GET /api/trips/operator-trips
+[2026-03-10T12:43:12.121Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:51:58.968Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: ⚙️  override existing env vars with { override: true }[0m
+[2026-03-10T12:51:58.974Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: 📡 add observability to secrets: https://dotenvx.com/ops[0m
+[2026-03-10T12:52:13.252Z] GET /api/trips/operator-stats
+[2026-03-10T12:52:13.258Z] GET /api/trips/operator-trips
+[2026-03-10T12:52:13.259Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:52:13.260Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:52:13.703Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:52:13.712Z] GET /api/trips/operator-trips
+[2026-03-10T12:52:13.776Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:52:13.840Z] GET /api/trips/operator-stats
+[2026-03-10T12:53:32.692Z] GET /api/trips/operator-stats
+[2026-03-10T12:53:32.694Z] GET /api/trips/operator-trips
+[2026-03-10T12:53:32.695Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:53:32.696Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:53:33.111Z] GET /api/trips/operator-trips
+[2026-03-10T12:53:33.112Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:53:33.169Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:53:33.236Z] GET /api/trips/operator-stats
+[2026-03-10T12:55:35.250Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops[0m
+[2026-03-10T12:55:35.256Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`[0m
+[2026-03-10T12:56:13.083Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:13.088Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:13.090Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:13.091Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:13.655Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:13.703Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:13.705Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:13.773Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:26.586Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:26.588Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:26.589Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:26.590Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:27.018Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:27.053Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:27.069Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:27.135Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:29.502Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:29.503Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:29.503Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:29.504Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:29.566Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:29.621Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:29.623Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:29.682Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:30.904Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:30.905Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:30.905Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:30.906Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:30.972Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:31.025Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:31.027Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:31.085Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:32.111Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:32.112Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:32.113Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:32.114Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:32.185Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:32.240Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:32.242Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:32.306Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:34.650Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:34.651Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:34.652Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:34.652Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:34.712Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:34.768Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:34.770Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:34.831Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:36.711Z] GET /api/trips/operator-stats
+[2026-03-10T12:56:36.712Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:36.713Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:36.714Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:36.786Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:56:36.841Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:56:36.844Z] GET /api/trips/operator-trips
+[2026-03-10T12:56:36.889Z] GET /api/trips/operator-stats
+[2026-03-10T12:57:02.773Z] GET /api/trips/operator-stats
+[2026-03-10T12:57:02.774Z] GET /api/trips/operator-trips
+[2026-03-10T12:57:02.775Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:57:02.776Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:57:03.331Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T12:57:03.388Z] GET /api/trips/operator-trips
+[2026-03-10T12:57:03.390Z] GET /api/trips/operator-past-trips
+[2026-03-10T12:57:03.449Z] GET /api/trips/operator-stats
+[2026-03-10T13:02:52.127Z] GET /api/trips/operator-stats
+[2026-03-10T13:02:52.130Z] GET /api/trips/operator-trips
+[2026-03-10T13:02:52.133Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:02:52.134Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:04:33.138Z] GET /api/trips/operator-stats
+[2026-03-10T13:04:33.142Z] GET /api/trips/operator-trips
+[2026-03-10T13:04:33.143Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:04:33.144Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:04:33.627Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:04:33.673Z] GET /api/trips/operator-trips
+[2026-03-10T13:04:33.695Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:04:33.738Z] GET /api/trips/operator-stats
+[2026-03-10T13:05:22.821Z] GET /api/buses/operator-list
+[2026-03-10T13:05:23.238Z] GET /api/buses/operator-list
+[2026-03-10T13:05:36.333Z] GET /api/trips/operator-stats
+[2026-03-10T13:05:36.335Z] GET /api/trips/operator-trips
+[2026-03-10T13:05:36.336Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:05:36.338Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:05:36.780Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:05:36.862Z] GET /api/trips/operator-trips
+[2026-03-10T13:05:36.881Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:05:36.894Z] GET /api/trips/operator-stats
+[2026-03-10T13:05:46.758Z] GET /api/users/profile
+[2026-03-10T13:05:46.761Z] GET /api/users/my-bookings
+[2026-03-10T13:05:46.828Z] GET /api/users/my-bookings
+[2026-03-10T13:05:46.884Z] GET /api/users/profile
+[2026-03-10T13:06:04.616Z] POST /api/chatbot/assist
+[2026-03-10T13:06:19.004Z] POST /api/chatbot/assist
+[2026-03-10T13:12:20.979Z] GET /api/trips/operator-stats
+[2026-03-10T13:12:20.981Z] GET /api/trips/operator-trips
+[2026-03-10T13:12:20.981Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:12:20.982Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:12:22.272Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:12:22.443Z] GET /api/trips/operator-stats
+[2026-03-10T13:12:22.573Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:12:22.607Z] GET /api/trips/operator-trips
+[2026-03-10T13:18:45.660Z] POST /api/ai/assist
+[2026-03-10T13:18:45.662Z] AI Controller hit!
+[2026-03-10T13:18:56.142Z] GET /api/trips/2886
+[2026-03-10T13:18:56.145Z] GET /api/bookings/seats/2886
+[2026-03-10T13:18:56.231Z] GET /api/trips/2886
+[2026-03-10T13:18:56.629Z] GET /api/bookings/seats/2886
+[2026-03-10T13:53:41.350Z] GET /api/trips/operator-stats
+[2026-03-10T13:53:41.351Z] GET /api/trips/operator-trips
+[2026-03-10T13:53:41.351Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:53:41.352Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:53:42.639Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T13:53:42.762Z] GET /api/trips/operator-past-trips
+[2026-03-10T13:53:42.779Z] GET /api/trips/operator-trips
+[2026-03-10T13:53:43.010Z] GET /api/trips/operator-stats
+[2026-03-10T14:00:20.366Z] GET /api/trips/operator-stats
+[2026-03-10T14:00:20.368Z] GET /api/trips/operator-trips
+[2026-03-10T14:00:20.369Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:00:20.371Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:00:22.114Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:00:22.169Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:00:22.235Z] GET /api/trips/operator-stats
+[2026-03-10T14:00:22.448Z] GET /api/trips/operator-trips
+[2026-03-10T14:00:31.326Z] GET /api/trips/operator-stats
+[2026-03-10T14:00:31.327Z] GET /api/trips/operator-trips
+[2026-03-10T14:00:31.328Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:00:31.329Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:00:31.443Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:00:31.484Z] GET /api/trips/operator-trips
+[2026-03-10T14:00:31.504Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:00:31.514Z] GET /api/trips/operator-stats
+[2026-03-10T14:20:27.026Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 📡 add observability to secrets: https://dotenvx.com/ops[0m
+[2026-03-10T14:20:27.033Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }[0m
+[2026-03-10T14:20:55.792Z] POST /api/auth/login
+[2026-03-10T14:21:05.295Z] GET /api/trips/search?start=Dhaka&end=Barisal&date=2026-03-10&sortBy=time_asc
+[2026-03-10T14:21:05.441Z] GET /api/trips/search?start=Dhaka&end=Barisal&date=2026-03-10&sortBy=time_asc
+[2026-03-10T14:21:12.133Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T14:21:12.209Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T14:21:15.918Z] GET /api/trips/operator-stats
+[2026-03-10T14:21:15.929Z] GET /api/trips/operator-trips
+[2026-03-10T14:21:15.931Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:21:15.932Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:21:16.129Z] GET /api/trips/operator-stats
+[2026-03-10T14:21:16.393Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:21:16.432Z] GET /api/trips/operator-trips
+[2026-03-10T14:21:16.467Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:21:20.354Z] GET /api/trips/operator-analytics
+[2026-03-10T14:21:31.612Z] GET /api/trips/2939
+[2026-03-10T14:21:31.615Z] GET /api/bookings/seats/2939
+[2026-03-10T14:21:32.077Z] GET /api/bookings/seats/2939
+[2026-03-10T14:21:32.096Z] GET /api/trips/2939
+[2026-03-10T14:21:38.540Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T14:21:38.660Z] GET /api/trips/search?start=Dhaka&end=Chittagong&date=2026-03-11&sortBy=time_asc
+[2026-03-10T14:21:54.102Z] GET /api/trips/2939
+[2026-03-10T14:21:54.107Z] GET /api/bookings/seats/2939
+[2026-03-10T14:21:54.532Z] GET /api/trips/2939
+[2026-03-10T14:21:54.537Z] GET /api/bookings/seats/2939
+[2026-03-10T14:21:58.291Z] POST /api/bookings/book
+[2026-03-10T14:21:58.293Z] [DEBUG] Booking attempt - Customer: 18, Trip: 2939, Seats: [
+  1363,
+  1364,
+  1367,
+  1368
+]
+[2026-03-10T14:21:58.293Z] [DEBUG] Calling create_booking_bulk(18, 2939, [1363,1364,1367,1368])
+[2026-03-10T14:21:58.377Z] [DEBUG] Booking successful, IDs: [
+  1369,
+  1370,
+  1371,
+  1372
+]
+[2026-03-10T14:22:00.428Z] GET /api/users/my-bookings
+[2026-03-10T14:22:00.622Z] GET /api/users/my-bookings
+[2026-03-10T14:22:10.067Z] POST /api/payment/process
+[2026-03-10T14:22:12.151Z] GET /api/users/profile
+[2026-03-10T14:22:12.154Z] GET /api/users/my-bookings
+[2026-03-10T14:22:12.223Z] GET /api/users/profile
+[2026-03-10T14:22:12.762Z] GET /api/users/my-bookings
+[2026-03-10T14:22:36.534Z] GET /api/users/profile
+[2026-03-10T14:22:36.535Z] GET /api/users/my-bookings
+[2026-03-10T14:22:37.001Z] GET /api/users/profile
+[2026-03-10T14:22:37.123Z] GET /api/users/my-bookings
+[2026-03-10T14:25:23.710Z] GET /api/trips/operator-stats
+[2026-03-10T14:25:23.712Z] GET /api/trips/operator-trips
+[2026-03-10T14:25:23.713Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:25:23.714Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:25:23.734Z] GET /api/users/profile
+[2026-03-10T14:25:23.735Z] GET /api/users/my-bookings
+[2026-03-10T14:25:24.205Z] GET /api/users/profile
+[2026-03-10T14:25:24.206Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:25:24.215Z] GET /api/trips/operator-trips
+[2026-03-10T14:25:24.237Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:25:24.284Z] GET /api/users/my-bookings
+[2026-03-10T14:25:24.333Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:13.146Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:13.149Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:13.149Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:13.150Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:13.224Z] GET /api/users/profile
+[2026-03-10T14:31:13.225Z] GET /api/users/my-bookings
+[2026-03-10T14:31:14.190Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:14.200Z] GET /api/users/profile
+[2026-03-10T14:31:14.430Z] GET /api/users/my-bookings
+[2026-03-10T14:31:14.458Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:14.482Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:14.515Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:22.597Z] GET /api/users/profile
+[2026-03-10T14:31:22.598Z] GET /api/users/my-bookings
+[2026-03-10T14:31:22.663Z] GET /api/users/profile
+[2026-03-10T14:31:22.766Z] GET /api/users/my-bookings
+[2026-03-10T14:31:30.633Z] POST /api/bookings/cancel
+[2026-03-10T14:31:30.638Z] POST /api/bookings/cancel
+[2026-03-10T14:31:32.593Z] GET /api/users/profile
+[2026-03-10T14:31:32.594Z] GET /api/users/my-bookings
+[2026-03-10T14:31:38.437Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:38.438Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:38.439Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:38.440Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:38.570Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:38.618Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:38.888Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:39.002Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:45.705Z] POST /api/bookings/operator/process-refund
+[2026-03-10T14:31:45.779Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:45.780Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:45.783Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:45.783Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:47.379Z] POST /api/bookings/operator/process-refund
+[2026-03-10T14:31:47.451Z] GET /api/trips/operator-stats
+[2026-03-10T14:31:47.452Z] GET /api/trips/operator-trips
+[2026-03-10T14:31:47.452Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:31:47.453Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:31:49.931Z] GET /api/users/profile
+[2026-03-10T14:31:49.932Z] GET /api/users/my-bookings
+[2026-03-10T14:31:49.994Z] GET /api/users/profile
+[2026-03-10T14:31:50.106Z] GET /api/users/my-bookings
+[2026-03-10T14:33:20.571Z] POST /api/bookings/cancel
+[2026-03-10T14:33:22.890Z] GET /api/users/profile
+[2026-03-10T14:33:22.893Z] GET /api/users/my-bookings
+[2026-03-10T14:33:27.060Z] GET /api/trips/operator-stats
+[2026-03-10T14:33:27.061Z] GET /api/trips/operator-trips
+[2026-03-10T14:33:27.061Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:33:27.062Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:33:28.095Z] GET /api/trips/operator-trips
+[2026-03-10T14:33:28.167Z] GET /api/trips/operator-stats
+[2026-03-10T14:33:28.448Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:33:28.519Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:33:33.253Z] GET /api/trips/operator-stats
+[2026-03-10T14:33:33.254Z] GET /api/trips/operator-trips
+[2026-03-10T14:33:33.255Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:33:33.255Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:33:33.343Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:33:33.404Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:33:33.405Z] GET /api/trips/operator-trips
+[2026-03-10T14:33:33.474Z] GET /api/trips/operator-stats
+[2026-03-10T14:34:28.400Z] GET /api/trips/operator-stats
+[2026-03-10T14:34:28.401Z] GET /api/trips/operator-trips
+[2026-03-10T14:34:28.401Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:34:28.402Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:34:28.800Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:34:28.858Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:34:28.859Z] GET /api/trips/operator-trips
+[2026-03-10T14:34:28.916Z] GET /api/trips/operator-stats
+[2026-03-10T14:34:29.083Z] GET /api/users/my-bookings
+[2026-03-10T14:34:29.084Z] GET /api/users/profile
+[2026-03-10T14:34:29.148Z] GET /api/users/profile
+[2026-03-10T14:34:29.205Z] GET /api/users/my-bookings
+[2026-03-10T14:38:50.569Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit[0m
+[2026-03-10T14:38:50.575Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`[0m
+[2026-03-10T14:39:11.698Z] GET /api/users/profile
+[2026-03-10T14:39:11.704Z] GET /api/users/my-bookings
+[2026-03-10T14:39:13.523Z] GET /api/users/profile
+[2026-03-10T14:39:13.647Z] GET /api/users/my-bookings
+[2026-03-10T14:39:57.577Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:39:58.704Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:39:59.786Z] GET /api/trips/3367
+[2026-03-10T14:39:59.789Z] GET /api/bookings/seats/3367
+[2026-03-10T14:39:59.871Z] GET /api/trips/3367
+[2026-03-10T14:40:00.650Z] GET /api/bookings/seats/3367
+[2026-03-10T14:40:02.118Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:02.409Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:03.281Z] GET /api/trips/3458
+[2026-03-10T14:40:03.282Z] GET /api/bookings/seats/3458
+[2026-03-10T14:40:03.366Z] GET /api/trips/3458
+[2026-03-10T14:40:03.424Z] GET /api/bookings/seats/3458
+[2026-03-10T14:40:05.120Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:05.224Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:06.355Z] GET /api/trips/3483
+[2026-03-10T14:40:06.357Z] GET /api/bookings/seats/3483
+[2026-03-10T14:40:06.439Z] GET /api/trips/3483
+[2026-03-10T14:40:06.502Z] GET /api/bookings/seats/3483
+[2026-03-10T14:40:08.101Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:08.271Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:09.403Z] GET /api/trips/3483
+[2026-03-10T14:40:09.404Z] GET /api/bookings/seats/3483
+[2026-03-10T14:40:09.473Z] GET /api/trips/3483
+[2026-03-10T14:40:09.480Z] GET /api/bookings/seats/3483
+[2026-03-10T14:40:10.969Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:11.290Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:12.515Z] GET /api/trips/3387
+[2026-03-10T14:40:12.517Z] GET /api/bookings/seats/3387
+[2026-03-10T14:40:12.577Z] GET /api/trips/3387
+[2026-03-10T14:40:12.633Z] GET /api/bookings/seats/3387
+[2026-03-10T14:40:13.753Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:13.883Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:14.807Z] GET /api/trips/3484
+[2026-03-10T14:40:14.809Z] GET /api/bookings/seats/3484
+[2026-03-10T14:40:14.895Z] GET /api/trips/3484
+[2026-03-10T14:40:14.902Z] GET /api/bookings/seats/3484
+[2026-03-10T14:40:16.386Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:16.580Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:17.633Z] GET /api/trips/3374
+[2026-03-10T14:40:17.634Z] GET /api/bookings/seats/3374
+[2026-03-10T14:40:17.704Z] GET /api/trips/3374
+[2026-03-10T14:40:17.768Z] GET /api/bookings/seats/3374
+[2026-03-10T14:40:18.923Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:19.136Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:21.481Z] GET /api/trips/3459
+[2026-03-10T14:40:21.482Z] GET /api/bookings/seats/3459
+[2026-03-10T14:40:21.555Z] GET /api/trips/3459
+[2026-03-10T14:40:21.670Z] GET /api/bookings/seats/3459
+[2026-03-10T14:40:23.604Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:40:23.751Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:41:11.731Z] GET /api/trips/operator-stats
+[2026-03-10T14:41:11.734Z] GET /api/trips/operator-trips
+[2026-03-10T14:41:11.735Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:41:11.737Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:41:12.438Z] GET /api/bookings/operator/refund-requests
+[2026-03-10T14:41:12.585Z] GET /api/trips/operator-trips
+[2026-03-10T14:41:12.610Z] GET /api/trips/operator-past-trips
+[2026-03-10T14:41:12.613Z] GET /api/trips/operator-stats
+[2026-03-10T14:42:13.248Z] GET /api/users/profile
+[2026-03-10T14:42:13.251Z] GET /api/users/my-bookings
+[2026-03-10T14:42:13.721Z] GET /api/users/profile
+[2026-03-10T14:42:13.776Z] GET /api/users/my-bookings
+[2026-03-10T14:42:35.630Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:42:37.214Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=time_asc
+[2026-03-10T14:42:43.175Z] GET /api/trips/search?start=Dhaka&end=Khulna&date=2026-03-14&sortBy=price_desc
+[2026-03-10T14:42:46.031Z] GET /api/trips/3430
+[2026-03-10T14:42:46.032Z] GET /api/bookings/seats/3430
+[2026-03-10T14:42:46.634Z] GET /api/trips/3430
+[2026-03-10T14:42:49.164Z] GET /api/bookings/seats/3430
+[2026-03-11T10:38:21.450Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🔄 add secrets lifecycle management: https://dotenvx.com/ops[0m
+[2026-03-11T10:38:21.458Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }[0m
+[2026-03-11T10:38:45.068Z] GET /api/users/profile
+[2026-03-11T10:38:45.075Z] GET /api/users/my-bookings
+[2026-03-11T10:38:45.658Z] GET /api/users/profile
+[2026-03-11T10:38:45.844Z] GET /api/users/my-bookings
+[2026-03-11T10:48:08.840Z] GET /api/trips/operator-stats
+[2026-03-11T10:48:08.844Z] GET /api/trips/operator-trips
+[2026-03-11T10:48:08.846Z] GET /api/trips/operator-past-trips
+[2026-03-11T10:48:08.847Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T10:48:11.106Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T10:48:11.206Z] GET /api/trips/operator-past-trips
+[2026-03-11T10:48:11.214Z] GET /api/trips/operator-trips
+[2026-03-11T10:48:11.362Z] GET /api/trips/operator-stats
+[2026-03-11T10:48:16.654Z] POST /api/auth/login
+[2026-03-11T10:48:17.173Z] GET /api/trips/operator-stats
+[2026-03-11T10:48:17.177Z] GET /api/trips/operator-trips
+[2026-03-11T10:48:17.179Z] GET /api/trips/operator-past-trips
+[2026-03-11T10:48:17.180Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T10:48:17.442Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T10:48:17.723Z] GET /api/trips/operator-past-trips
+[2026-03-11T10:48:17.739Z] GET /api/trips/operator-trips
+[2026-03-11T10:48:17.959Z] GET /api/trips/operator-stats
+[2026-03-11T16:21:52.139Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`[0m
+[2026-03-11T16:21:52.145Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }[0m
+[2026-03-11T16:22:49.795Z] GET /api/users/profile
+[2026-03-11T16:22:49.804Z] GET /api/users/my-bookings
+[2026-03-11T16:22:49.809Z] GET /api/users/profile
+[2026-03-11T16:22:49.811Z] GET /api/users/my-bookings
+[2026-03-11T16:22:59.565Z] POST /api/auth/login
+[2026-03-11T16:23:02.749Z] GET /api/users/profile
+[2026-03-11T16:23:02.753Z] GET /api/users/my-bookings
+[2026-03-11T16:23:02.817Z] GET /api/users/profile
+[2026-03-11T16:23:03.418Z] GET /api/users/my-bookings
+[2026-03-11T16:25:11.224Z] POST /api/auth/login
+[2026-03-11T16:25:35.478Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:25:35.927Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:25:47.577Z] GET /api/trips/3431
+[2026-03-11T16:25:47.578Z] GET /api/bookings/seats/3431
+[2026-03-11T16:25:48.088Z] GET /api/trips/3431
+[2026-03-11T16:25:48.096Z] GET /api/bookings/seats/3431
+[2026-03-11T16:26:04.538Z] POST /api/bookings/cancel
+[2026-03-11T16:26:06.273Z] GET /api/users/profile
+[2026-03-11T16:26:06.277Z] GET /api/users/my-bookings
+[2026-03-11T16:26:11.097Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:11.098Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:11.099Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:11.101Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:11.272Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:11.428Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:11.873Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:11.967Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:12.695Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:12.697Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:12.698Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:12.699Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:12.903Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:12.936Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:12.938Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:13.121Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:19.214Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:19.214Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:19.215Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:19.215Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:19.300Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:19.429Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:19.465Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:19.581Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:29.604Z] POST /api/auth/login
+[2026-03-11T16:26:29.855Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:29.859Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:29.860Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:29.861Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:30.138Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:30.437Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:30.483Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:30.719Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:34.091Z] GET /api/trips/operator-stats
+[2026-03-11T16:26:34.091Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:34.092Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:34.093Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:34.185Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:26:34.262Z] GET /api/trips/operator-trips
+[2026-03-11T16:26:34.321Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:26:34.324Z] GET /api/trips/operator-stats
+[2026-03-11T16:27:00.948Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:27:02.103Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:27:04.274Z] GET /api/trips/3403
+[2026-03-11T16:27:04.276Z] GET /api/bookings/seats/3403
+[2026-03-11T16:27:04.467Z] GET /api/trips/3403
+[2026-03-11T16:27:05.249Z] GET /api/bookings/seats/3403
+[2026-03-11T16:27:07.716Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:27:07.923Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:28:21.719Z] GET /api/trips/operator-analytics
+[2026-03-11T16:29:06.188Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:29:06.588Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:29:22.032Z] POST /api/auth/login
+[2026-03-11T16:29:27.554Z] POST /api/auth/login
+[2026-03-11T16:29:27.815Z] GET /api/trips/operator-stats
+[2026-03-11T16:29:27.816Z] GET /api/trips/operator-trips
+[2026-03-11T16:29:27.817Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:29:27.818Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:29:28.092Z] GET /api/trips/operator-stats
+[2026-03-11T16:29:28.479Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:29:28.566Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:29:28.580Z] GET /api/trips/operator-trips
+[2026-03-11T16:29:45.617Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:29:46.049Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:29:47.160Z] GET /api/trips/3403
+[2026-03-11T16:29:47.161Z] GET /api/bookings/seats/3403
+[2026-03-11T16:29:47.220Z] GET /api/trips/3403
+[2026-03-11T16:29:47.577Z] GET /api/bookings/seats/3403
+[2026-03-11T16:29:49.964Z] POST /api/bookings/book
+[2026-03-11T16:29:49.964Z] [DEBUG] Booking attempt - Customer: 18, Trip: 3403, Seats: [
+  2276,
+  2279
+]
+[2026-03-11T16:29:49.964Z] [DEBUG] Calling create_booking_bulk(18, 3403, [2276,2279])
+[2026-03-11T16:29:50.041Z] [DEBUG] Booking successful, IDs: [
+  1379,
+  1380
+]
+[2026-03-11T16:29:51.879Z] GET /api/users/my-bookings
+[2026-03-11T16:29:52.048Z] GET /api/users/my-bookings
+[2026-03-11T16:30:01.021Z] POST /api/payment/process
+[2026-03-11T16:30:08.431Z] GET /api/users/profile
+[2026-03-11T16:30:08.433Z] GET /api/users/my-bookings
+[2026-03-11T16:30:08.515Z] GET /api/users/profile
+[2026-03-11T16:30:09.218Z] GET /api/users/my-bookings
+[2026-03-11T16:30:18.741Z] POST /api/bookings/cancel
+[2026-03-11T16:30:19.908Z] GET /api/users/profile
+[2026-03-11T16:30:19.911Z] GET /api/users/my-bookings
+[2026-03-11T16:30:29.212Z] GET /api/trips/operator-stats
+[2026-03-11T16:30:29.215Z] GET /api/trips/operator-trips
+[2026-03-11T16:30:29.216Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:30:29.217Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:30:29.345Z] GET /api/trips/operator-trips
+[2026-03-11T16:30:29.429Z] GET /api/trips/operator-stats
+[2026-03-11T16:30:30.076Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:30:30.363Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:30:47.524Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:30:48.048Z] GET /api/trips/search?start=Sylhet&end=Dhaka&date=2026-03-14&sortBy=time_asc
+[2026-03-11T16:30:49.359Z] GET /api/trips/3403
+[2026-03-11T16:30:49.359Z] GET /api/bookings/seats/3403
+[2026-03-11T16:30:49.490Z] GET /api/trips/3403
+[2026-03-11T16:30:49.880Z] GET /api/bookings/seats/3403
+[2026-03-11T16:30:54.649Z] POST /api/bookings/book
+[2026-03-11T16:30:54.649Z] [DEBUG] Booking attempt - Customer: 6, Trip: 3403, Seats: [
+  2279
+]
+[2026-03-11T16:30:54.649Z] [DEBUG] Calling create_booking_bulk(6, 3403, [2279])
+[ERROR] [2026-03-11T16:30:54.710Z] [DEBUG] Booking Exception: {
+  "message": "Constraint Violation: Seat 2279 is already taken or reserved for Trip 3403",
+  "code": "P0001",
+  "stack": "error: Constraint Violation: Seat 2279 is already taken or reserved for Trip 3403\n    at D:\\Web Project\\Project\\node_modules\\pg-pool\\index.js:45:11\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async createBooking (D:\\Web Project\\Project\\src\\controllers\\bookingController.js:23:24)"
+}
+[2026-03-11T16:32:56.125Z] POST /api/bookings/operator/process-refund
+[2026-03-11T16:33:05.218Z] POST /api/bookings/operator/process-refund
+[2026-03-11T16:33:07.190Z] GET /api/trips/operator-stats
+[2026-03-11T16:33:07.191Z] GET /api/trips/operator-trips
+[2026-03-11T16:33:07.192Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:33:07.194Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:33:07.733Z] GET /api/trips/operator-stats
+[2026-03-11T16:33:08.494Z] GET /api/trips/operator-stats
+[2026-03-11T16:33:08.495Z] GET /api/trips/operator-trips
+[2026-03-11T16:33:08.496Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:33:08.497Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:33:10.512Z] GET /api/trips/operator-stats
+[2026-03-11T16:33:12.294Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:33:12.852Z] GET /api/trips/operator-trips
+[2026-03-11T16:33:13.258Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:33:25.790Z] POST /api/bookings/book
+[2026-03-11T16:33:25.790Z] [DEBUG] Booking attempt - Customer: 6, Trip: 3403, Seats: [
+  2280,
+  2279
+]
+[2026-03-11T16:33:25.790Z] [DEBUG] Calling create_booking_bulk(6, 3403, [2280,2279])
+[2026-03-11T16:33:33.707Z] GET /api/trips/3403
+[2026-03-11T16:33:33.710Z] GET /api/bookings/seats/3403
+[2026-03-11T16:33:36.379Z] [DEBUG] Booking successful, IDs: [
+  1382,
+  1383
+]
+[2026-03-11T16:33:53.726Z] GET /api/trips/3403
+[2026-03-11T16:33:53.726Z] GET /api/bookings/seats/3403
+[ERROR] [2026-03-11T16:34:00.769Z] Fetch Trip Seats Error: {
+  "code": "ECONNRESET"
+}
+[ERROR] [2026-03-11T16:34:00.790Z] Fetch Trip Details Error: {
+  "code": "ECONNRESET"
+}
+[2026-03-11T16:34:36.678Z] GET /api/users/profile
+[2026-03-11T16:34:36.680Z] GET /api/users/my-bookings
+[2026-03-11T16:34:43.597Z] GET /api/users/profile
+[2026-03-11T16:34:44.317Z] GET /api/users/my-bookings
+[2026-03-11T16:34:56.470Z] POST /api/bookings/cancel
+[2026-03-11T16:34:56.472Z] POST /api/bookings/cancel
+[2026-03-11T16:34:58.719Z] GET /api/users/profile
+[2026-03-11T16:34:58.723Z] GET /api/users/my-bookings
+[2026-03-11T16:35:01.507Z] GET /api/trips/3403
+[2026-03-11T16:35:01.508Z] GET /api/bookings/seats/3403
+[2026-03-11T16:35:01.570Z] GET /api/trips/3403
+[2026-03-11T16:35:01.684Z] GET /api/bookings/seats/3403
+[2026-03-11T16:35:03.121Z] GET /api/trips/3403
+[2026-03-11T16:35:03.127Z] GET /api/bookings/seats/3403
+[2026-03-11T16:35:03.451Z] GET /api/trips/3403
+[2026-03-11T16:35:03.463Z] GET /api/bookings/seats/3403
+[2026-03-11T16:35:17.583Z] GET /api/users/profile
+[2026-03-11T16:35:17.586Z] GET /api/users/my-bookings
+[2026-03-11T16:35:20.455Z] GET /api/users/profile
+[2026-03-11T16:35:20.547Z] GET /api/users/my-bookings
+[2026-03-11T16:39:45.716Z] POST /api/bookings/book
+[2026-03-11T16:39:45.716Z] [DEBUG] Booking attempt - Customer: 6, Trip: 3403, Seats: [
+  2279
+]
+[2026-03-11T16:39:45.716Z] [DEBUG] Calling create_booking_bulk(6, 3403, [2279])
+[2026-03-11T16:39:46.351Z] [DEBUG] Booking successful, IDs: [
+  1384
+]
+[2026-03-11T16:39:47.788Z] GET /api/users/my-bookings
+[2026-03-11T16:39:47.930Z] GET /api/users/my-bookings
+[2026-03-11T16:39:54.891Z] POST /api/payment/process
+[2026-03-11T16:39:59.992Z] GET /api/users/profile
+[2026-03-11T16:39:59.993Z] GET /api/users/my-bookings
+[2026-03-11T16:40:00.064Z] GET /api/users/profile
+[2026-03-11T16:40:00.514Z] GET /api/users/my-bookings
+[2026-03-11T16:44:59.185Z] [dotenv@17.2.3] injecting env (4) from .env [2m-- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild[0m
+[2026-03-11T16:44:59.192Z] [dotenv@17.2.3] injecting env (0) from .env [2m-- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }[0m
+[2026-03-11T16:45:06.751Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-12&sortBy=time_asc
+[2026-03-11T16:45:06.825Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-12&sortBy=time_asc
+[2026-03-11T16:45:09.051Z] GET /api/trips/3045
+[2026-03-11T16:45:09.053Z] GET /api/bookings/seats/3045
+[2026-03-11T16:45:09.124Z] GET /api/trips/3045
+[2026-03-11T16:45:09.605Z] GET /api/bookings/seats/3045
+[2026-03-11T16:47:28.719Z] GET /api/trips/operator-stats
+[2026-03-11T16:47:28.724Z] GET /api/trips/operator-trips
+[2026-03-11T16:47:28.726Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:47:28.728Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:47:29.773Z] GET /api/trips/operator-trips
+[2026-03-11T16:47:29.776Z] GET /api/trips/operator-past-trips
+[2026-03-11T16:47:29.778Z] GET /api/bookings/operator/refund-requests
+[2026-03-11T16:47:29.846Z] GET /api/trips/operator-stats
+[2026-03-11T16:49:49.361Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-12&sortBy=time_asc
+[2026-03-11T16:49:49.800Z] GET /api/trips/search?start=Chittagong&end=Dhaka&date=2026-03-12&sortBy=time_asc
+[2026-03-11T17:06:36.999Z] GET /api/users/profile
+[2026-03-11T17:06:37.004Z] GET /api/users/my-bookings
+[2026-03-11T17:06:37.543Z] GET /api/users/profile
+[2026-03-11T17:06:37.682Z] GET /api/users/my-bookings
