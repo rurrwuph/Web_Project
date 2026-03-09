@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, MapPin, Bus, ChevronLeft, Send, AlertTriangle } from 'lucide-react';
+import { Calendar, Clock, MapPin, Bus, Plus, Trash2, ChevronLeft, AlertCircle, Send,CheckCircle2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/api';
 
 const AssignTrip = () => {
     const navigate = useNavigate();
@@ -25,8 +25,8 @@ const AssignTrip = () => {
         const fetchData = async () => {
             try {
                 const [busRes, routeRes] = await Promise.all([
-                    axios.get('/api/buses/operator-list', config),
-                    axios.get('/api/trips/routes')
+                    api.get('/buses/operator-list'),
+                    api.get('/trips/routes')
                 ]);
                 setBuses(busRes.data);
                 setRoutes(routeRes.data);
@@ -43,7 +43,7 @@ const AssignTrip = () => {
         e.preventDefault();
         setSubmitting(true);
         try {
-            await axios.post('/api/trips/assign', formData, config);
+            await api.post('/trips/assign', formData);
             setMessage({ type: 'success', text: 'Trip assigned successfully!' });
             setTimeout(() => navigate('/operator'), 2000);
         } catch (err) {
@@ -69,9 +69,21 @@ const AssignTrip = () => {
 
                 <div className="p-8">
                     {message && (
-                        <div className={`mb-8 p-4 rounded-2xl border ${message.type === 'success' ? 'bg-emerald-50 border-emerald-100 text-emerald-700' : 'bg-rose-50 border-rose-100 text-rose-700'} font-bold flex items-center gap-2`}>
-                            {message.type === 'error' && <AlertTriangle size={20} />}
-                            {message.text}
+                        <div className={`mb-8 p-6 rounded-3xl border-2 flex flex-col items-center text-center animate-in fade-in zoom-in duration-300 ${message.type === 'success'
+                                ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
+                                : 'bg-rose-50 border-rose-200 text-rose-700'
+                            }`}>
+                            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${message.type === 'success' ? 'bg-emerald-100' : 'bg-rose-100'
+                                }`}>
+                                {message.type === 'success' ? <CheckCircle2 size={32} /> : <AlertCircle size={32} />}
+                            </div>
+                            <h3 className="text-xl font-black mb-1">
+                                {message.type === 'success' ? 'Great Success!' : 'Action Failed'}
+                            </h3>
+                            <p className="font-bold opacity-80">{message.text}</p>
+                            {message.type === 'success' && (
+                                <p className="text-xs mt-4 animate-pulse">Redirecting to dashboard...</p>
+                            )}
                         </div>
                     )}
 

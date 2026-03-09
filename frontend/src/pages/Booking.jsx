@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Armchair, ChevronLeft, CreditCard, Info, MapPin, AlertCircle, CheckCircle2 } from 'lucide-react';
-import axios from 'axios';
+import api from '../utils/api';
 
 const Booking = () => {
     const navigate = useNavigate();
@@ -14,13 +14,15 @@ const Booking = () => {
     const [bookingLoading, setBookingLoading] = useState(false);
     const [bookingSuccess, setBookingSuccess] = useState(false);
 
+    const [newBookingIds, setNewBookingIds] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
             try {
                 const [tripRes, seatsRes] = await Promise.all([
-                    axios.get(`/api/trips/${tripId}`),
-                    axios.get(`/api/bookings/seats/${tripId}`)
+                    api.get(`/trips/${tripId}`),
+                    api.get(`/bookings/seats/${tripId}`)
                 ]);
                 setTrip(tripRes.data);
                 setSeats(seatsRes.data);
@@ -59,22 +61,24 @@ const Booking = () => {
 
         setBookingLoading(true);
         try {
-            for (const seat of selectedSeats) {
-                console.log('Sending Booking Request with Token:', token);
-                await axios.post('/api/bookings/book',
-                    { tripId: parseInt(tripId), seatId: seat.seatid },
-                    { headers: { Authorization: `Bearer ${token}` } }
-                );
-            }
+            const seatIds = selectedSeats.map(s => s.seatid);
+            const res = await api.post('/bookings/book', {
+                tripId: parseInt(tripId),
+                seatId: seatIds
+            });
+
+            // The API returns { message, bookingId: [id1, id2, ...] }
+            setNewBookingIds(res.data.bookingId);
             setBookingSuccess(true);
         } catch (err) {
-            const errorMsg = err.response?.data?.error || "Booking failed.";
-            const errorDetails = err.response?.data?.details || err.response?.data?.message || "";
-            alert(`${errorMsg}\n${errorDetails}`);
+            alert(err.response?.data?.error || "Booking failed.");
         } finally {
             setBookingLoading(false);
         }
     };
+
+    const basePrice = trip ? parseFloat(trip.basefare) : 0;
+    const totalPrice = selectedSeats.length * basePrice;
 
     if (loading) return (
         <div className="flex flex-col items-center justify-center py-40 space-y-4">
@@ -99,18 +103,27 @@ const Booking = () => {
             <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
                 <CheckCircle2 size={48} />
             </div>
-            <h2 className="text-3xl font-black text-gray-900 mb-4">Booking Confirmed!</h2>
+            <h2 className="text-3xl font-black text-gray-900 mb-4">Seats Reserved!</h2>
             <p className="text-gray-600 mb-8 leading-relaxed">
-                Pack your bags! Your seats <span className="font-bold text-indigo-600">{selectedSeats.map(s => s.seatnumber).join(', ')}</span> have been successfully reserved for the trip to <span className="font-bold">{trip?.endpoint}</span>.
+                Your seats <span className="font-bold text-indigo-600">{selectedSeats.map(s => s.seatnumber).join(', ')}</span> have been temporarily reserved. Please complete the payment to confirm your booking.
             </p>
-            <button onClick={() => navigate('/')} className="w-full bg-gray-900 text-white py-4 rounded-xl font-bold hover:bg-indigo-600 transition-all">
-                Return to Home
-            </button>
+            <div className="flex flex-col gap-4">
+                <button
+                    onClick={() => navigate('/payment', { state: { bookingIds: newBookingIds, trip, selectedSeats, totalPrice } })}
+                    className="w-full bg-indigo-600 text-white py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center gap-2"
+                >
+                    Proceed to Payment <CreditCard size={20} />
+                </button>
+                <button onClick={() => navigate('/profile')} className="w-full bg-gray-100 text-gray-600 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all">
+                    Pay Later
+                </button>
+            </div>
+
         </div>
     );
 
-    const basePrice = trip ? parseFloat(trip.basefare) : 0;
-    const totalPrice = selectedSeats.length * basePrice;
+    // Price calculations moved up
+
 
     return (
         <div className="max-w-7xl mx-auto px-4 py-12">
@@ -151,13 +164,13 @@ const Booking = () => {
                                             onClick={() => toggleSeat(seat)}
                                             className={`
                                                 relative group w-full aspect-square rounded-xl flex flex-col items-center justify-center transition-all duration-300 transform
-                                                ${seat.isbooked ? 'bg-gray-100 text-gray-300 cursor-not-allowed border border-transparent' :
+                                                ${seat.isbooked ? 'bg-gray-200 text-gray-500 cursor-not-allowed border border-transparent shadow-inner' :
                                                     selectedSeats.find(s => s.seatid === seat.seatid) ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-100 -translate-y-1' :
                                                         'bg-white text-gray-500 border border-gray-200 hover:border-indigo-400 hover:text-indigo-600 hover:-translate-y-1 shadow-sm'}
                                             `}
                                         >
-                                            <Armchair size={24} className={seat.isbooked ? 'opacity-20' : ''} />
-                                            <span className="text-[10px] font-bold mt-1">{seat.seatnumber}</span>
+                                            <Armchair size={24} />
+                                            <span className="text-[10px] font-bold mt-1 uppercase tracking-tighter">{seat.seatnumber}</span>
                                             {seat.seattype === 'Window' && !seat.isbooked && (
                                                 <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-sky-400 rounded-full"></div>
                                             )}
@@ -175,7 +188,7 @@ const Booking = () => {
                                         <span className="text-gray-900">Selected</span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <div className="w-5 h-5 rounded-lg bg-gray-100 border border-gray-200"></div>
+                                        <div className="w-5 h-5 rounded-lg bg-gray-200 shadow-inner"></div>
                                         <span className="text-gray-400">Reserved</span>
                                     </div>
                                 </div>

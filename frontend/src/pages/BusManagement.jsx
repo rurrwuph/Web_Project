@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Bus, Plus, ChevronLeft, Trash2, ShieldCheck } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../utils/api';
 
 const BusManagement = () => {
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const BusManagement = () => {
 
     const fetchBuses = async () => {
         try {
-            const res = await axios.get('/api/buses/operator-list', config);
+            const res = await api.get('/buses/operator-list');
             setBuses(res.data);
         } catch (err) {
             console.error('Error fetching buses:', err);
@@ -38,15 +38,14 @@ const BusManagement = () => {
         e.preventDefault();
         setSubmitting(true);
         try {
-            await axios.post('/api/buses/add', formData, config);
+            await api.post('/buses/add', formData);
             setMessage({ type: 'success', text: 'Bus added successfully!' });
             setShowForm(false);
             setFormData({ busNumber: '', busType: 'AC', totalSeats: 36 });
             fetchBuses();
         } catch (err) {
             const errorMsg = err.response?.data?.error || 'Failed to add bus. Please try again.';
-            const errorDetails = err.response?.data?.details ? ` (${err.response.data.details})` : '';
-            setMessage({ type: 'error', text: errorMsg + errorDetails });
+            setMessage({ type: 'error', text: errorMsg });
             console.error('Bus addition error:', err);
         } finally {
             setSubmitting(false);
